@@ -1,8 +1,12 @@
 import React from 'react'
+import AppMenuItem from './APP/COMPONENTS/AppMenuItem'
+
 
 const Page = () => {
   return (
-    <div>Page</div>
+    <>Page
+      <AppMenuItem/>
+    </>
   )
 }
 
