@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #0a0a0a;
+    --background: #ededed;
   }
 }
 
@@ -23,5 +23,9 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .CENTER {
+    @apply flex justify-center items-center;
   }
 }
