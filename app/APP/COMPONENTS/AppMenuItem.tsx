@@ -1,12 +1,13 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 const AppMenuItem = ({ text, icon }: TitleIcon) => {
     return (
-        <div className='bg-white hover:bg-[#8A6032] hover:cursor-pointer text-[#8A6032]  hover:text-white w-[110px] h-[35px] CENTER gap-2 rounded-md'>
-            {icon}
+        <div className='bg-white hover:bg-AppPrimary hover:cursor-pointer text-[#8A6032] hover:text-white w-[150px] h-[35px] rounded-md px-4 flex items-center gap-2'>
+            <span>{icon}</span>
             <span>{text}</span>
         </div>
     )
 }
+
 
 export default AppMenuItem

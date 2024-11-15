@@ -10,9 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        AppPrimary: "#A6734D",   // Slightly lighter warm brown
+        AppSecondary: "#8B5E34", // Deeper, muted brown
+        AppTertiary: "#FAF4ED",  // Softer, light beige background
+        AppPop: "#E57C6D",       // Muted coral for highlights or accents
+        AppMutedPop: "#6A5545",  // Darker muted brown for subtle accents
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+
     },
   },
   plugins: [],
