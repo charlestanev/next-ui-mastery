@@ -9,7 +9,7 @@ const Page = () => {
     <>
       {
         MenuItemList.map((x) => (
-          <AppMenuItem key={x.id} icon={<FaDog />} text={x.title} />
+          <AppMenuItem key={x.id} icon={x.icon} text={x.title} />
         ))
       }
     </>
