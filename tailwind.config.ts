@@ -13,7 +13,7 @@ const config: Config = {
 			colors: {
 				AppPrimary: '#A6734D',
 				AppSecondary: '#8B5E34',
-				AppTertiary: '#FAF4ED',
+				AppTertiary: '#F9F5F2',
 				AppPop: '#E57C6D',
 				AppMutedPop: '#6A5545',
 				background: 'hsl(var(--background))',

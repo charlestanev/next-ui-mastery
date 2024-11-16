@@ -1,16 +1,15 @@
 import React from 'react'
 import AppLeftPanel from './APP/COMPONENTS/AppLeftPanel'
+import { cn } from '@/lib/utils'
 
 function Page() {
   return (
-    <div className="flex flex-row h-screen">
-      <div className='w-1/5 CENTER gap-1 flex-col bg-AppTertiary p-10'>
-        Left Sidear
-        <AppLeftPanel />
-      </div>
-      <div className='w-5/6 CENTER gap-1 flex-col bg-AppSecondary p-10'>
-        Main Content
-      </div>
+    <div className={
+      cn(
+        'CENTER gap-1 flex-col bg-AppTertiary h-screen w-screen',
+        'justify-center items-start'
+      )}>
+      <AppLeftPanel />
     </div>
   )
 }
