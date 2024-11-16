@@ -1,5 +1,4 @@
 import React from 'react'
-import AppMenuItemGroup from './APP/COMPONENTS/AppMenuItemGroup'
 import AppLeftPanel from './APP/COMPONENTS/AppLeftPanel'
 
 function Page() {

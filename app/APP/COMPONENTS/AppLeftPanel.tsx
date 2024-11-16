@@ -3,9 +3,10 @@ import AppMenuItemGroup from './AppMenuItemGroup'
 
 function AppLeftPanel() {
     return (
-        <>
+        <div className='bg-AppSecondary'>
+            test
             <AppMenuItemGroup />
-        </>
+        </div>
     )
 }
 
