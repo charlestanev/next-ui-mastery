@@ -1,4 +1,5 @@
 type TitleIcon = {
     text: string,
-    icon: React.ReactNode
+    icon: React.ReactNode,
+    link: string
 }
