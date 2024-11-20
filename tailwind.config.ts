@@ -11,8 +11,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				AppPrimary: '#A6734D',
-				AppSecondary: '#8B5E34',
+				AppPrimary: '#8e6032',
+				AppSecondary: '#aa835c',
 				AppTertiary: '#F9F5F2',
 				AppPop: '#E57C6D',
 				AppMutedPop: '#6A5545',
