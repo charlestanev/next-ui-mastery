@@ -2,7 +2,7 @@ import React from 'react'
 
 function Page() {
     return (
-        <div>Breeds</div>
+        <div>Inside Breed Folder</div>
     )
 }
 

@@ -7,7 +7,7 @@ function AppMenuItemGroup() {
         <>
             {
                 MenuItemList.map((x) => (
-                    <AppMenuItem key={x.id} icon={x.icon} text={x.title} />
+                    <AppMenuItem key={x.id} icon={x.icon} text={x.title} link={x.link} />
                 ))
             }
         </>

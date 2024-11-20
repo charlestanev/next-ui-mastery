@@ -7,27 +7,27 @@ const MenuItemList = [
     {
         id: 0,
         title: "Rottweiler",
-        link: "/Rottweiler",
+        link: "/breed/Rottweiler",
         icon: <FaDog />
     },
     {
         id: 1,
         title: "Pomeranian",
-        link: "/Pomeranian",
+        link: "/breed/Pomeranian",
         icon: <GiSittingDog />
 
     },
     {
         id: 2,
         title: "Doberman",
-        link: "/Doberman",
+        link: "/breed/Doberman",
         icon: <FaShieldDog />
 
     },
     {
         id: 3,
         title: "Husky",
-        link: "/Husky",
+        link: "/breed/Husky",
         icon: <GiSniffingDog />
     }
 ];
