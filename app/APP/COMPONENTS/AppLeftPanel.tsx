@@ -2,6 +2,7 @@ import React from 'react'
 import AppMenuItemGroup from './AppMenuItemGroup'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 function AppLeftPanel() {
     return (
