@@ -1,16 +1,18 @@
 "use client";
 
+import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
 import { useParams } from 'next/navigation';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Page() {
-    const Params = useParams()
+    const Params = useParams();
+    const [ImageArray, setImageArray] = useState<string[] | null>(null)
 
     const GetData = async () => {
-        await fetch(`https://dog.ceo/api/breed/${thisBreed}/images/random`)
+        await fetch(`https://dog.ceo/api/breed/hound/images/random/20`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
+                setImageArray(data.message)
             })
 
 
@@ -22,10 +24,10 @@ function Page() {
     }, [])
 
     return (
-        <div>
-            Inside a breed folder now {Params.breed}
-            <div>
-            </div>
+        <div className='h-screen w-screen bg-slate-400 CENTER'>
+            {
+                ImageArray ? <AppSlider ImageArrayList={ImageArray} /> : 'Loading...'
+            }
         </div>
     )
 }
