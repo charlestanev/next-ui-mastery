@@ -6,28 +6,28 @@ import { GiSniffingDog } from "react-icons/gi";
 const MenuItemList = [
     {
         id: 0,
-        title: "Rottweiler",
-        link: "/breed/Rottweiler",
+        title: "Labrador",
+        link: "/breed/labrador",
         icon: <FaDog />
     },
     {
         id: 1,
         title: "Pomeranian",
-        link: "/breed/Pomeranian",
+        link: "/breed/pomeranian",
         icon: <GiSittingDog />
 
     },
     {
         id: 2,
         title: "Doberman",
-        link: "/breed/Doberman",
+        link: "/breed/doberman",
         icon: <FaShieldDog />
 
     },
     {
         id: 3,
         title: "Husky",
-        link: "/breed/Husky",
+        link: "/breed/husky",
         icon: <GiSniffingDog />
     }
 ];

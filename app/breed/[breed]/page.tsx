@@ -9,7 +9,7 @@ function Page() {
     const [ImageArray, setImageArray] = useState<string[] | null>(null)
 
     const GetData = async () => {
-        await fetch(`https://dog.ceo/api/breed/hound/images/random/20`)
+        await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/20`)
             .then((res) => res.json())
             .then((data) => {
                 setImageArray(data.message)
@@ -24,7 +24,7 @@ function Page() {
     }, [])
 
     return (
-        <div className='h-screen w-screen bg-slate-400 CENTER'>
+        <div className='h-screen w-screen bg-AppTertiary CENTER'>
             {
                 ImageArray ? <AppSlider ImageArrayList={ImageArray} /> : 'Loading...'
             }

@@ -16,24 +16,23 @@ export function AppSlider({ ImageArrayList }: { ImageArrayList: string[] }) {
                 align: "start",
             }}
             orientation="vertical"
-            className="h-[200px] w-[200px] flex items-center justify-center"
+            className="h-[380px] w-[120px]"
         >
-            <CarouselContent className="-mt-1 h-[220px]">
+            <CarouselContent className="-mt-1 h-[400px]">
                 {ImageArrayList.map((item, index) => (
-                    <CarouselItem key={index} className="pt-1 md:basis-1/2">
-                        <div className="p-1">
-                            <Card>
-                                <CardContent className="flex items-center justify-center p-6 h-[200px]">
+                    <CarouselItem
+                        key={index}
+                        className="pt-1 md:basis-1/3"
+                    >
+                        <div className="h-[120px] w-[120px]">
+                            <Image
+                                src={item}
+                                width={200}
+                                height={200}
+                                alt="Images"
+                                className="rounded-md h-[100%] border-2 border-AppPrimary"
 
-                                    <Image
-                                        src={item}
-                                        alt={"images in here"}
-                                        className="w-full h-auto max-h-[180px]"
-                                        width={1000}
-                                        height={0}
-                                    />
-                                </CardContent>
-                            </Card>
+                            />
                         </div>
                     </CarouselItem>
                 ))}
@@ -41,5 +40,7 @@ export function AppSlider({ ImageArrayList }: { ImageArrayList: string[] }) {
             <CarouselPrevious />
             <CarouselNext />
         </Carousel>
+
+
     )
 }

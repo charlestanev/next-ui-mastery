@@ -6,8 +6,8 @@ function Page() {
   return (
     <div className={
       cn(
-        'CENTER gap-1 flex-col bg-AppTertiary h-screen w-screen',
-        'justify-center items-start'
+        'gap-1 flex-col bg-AppTertiary h-screen w-screen',
+        'justify-center items-center'
       )}>
       <AppLeftPanel />
     </div>
