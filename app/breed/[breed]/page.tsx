@@ -1,8 +1,19 @@
-import React from 'react'
+"use client";
+
+import { useParams } from 'next/navigation';
+import React, { useEffect } from 'react'
 
 function Page() {
+    const Params = useParams()
+
+    useEffect(() => {
+        alert('Inside a breed folder now')
+    }, [])
+
     return (
-        <div>Inside Breed Folder</div>
+        <div>
+            Inside a breed folder now {Params.breed}
+        </div>
     )
 }
 
