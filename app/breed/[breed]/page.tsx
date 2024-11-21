@@ -6,13 +6,26 @@ import React, { useEffect } from 'react'
 function Page() {
     const Params = useParams()
 
+    const GetData = async () => {
+        await fetch(`https://dog.ceo/api/breed/${thisBreed}/images/random`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+            })
+
+
+    }
+
     useEffect(() => {
-        alert('Inside a breed folder now')
+        GetData()
+        // alert('Inside a breed folder now')
     }, [])
 
     return (
         <div>
             Inside a breed folder now {Params.breed}
+            <div>
+            </div>
         </div>
     )
 }
