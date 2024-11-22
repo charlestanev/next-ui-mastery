@@ -30,7 +30,7 @@ function Page() {
     return (
 
 
-        <div className='h-screen w-screen bg-AppTertiary justify-start'>
+        <div className='h-screen w-screen bg-AppTertiary justify-start CENTER'>
             <div className={cn(
                 'pt-12 w-[180px] CENTER h-screen !justify-start',
                 'gap-[120px] flex-col',
@@ -43,7 +43,11 @@ function Page() {
                     }
                 </div>
             </div>
-            
+            <div className="bg-AppSecondary w-full h-full pt-12 pl-12">
+                <h1 className='capitalize text-3xl font-bold text-AppMutedPop'>
+                    {Params.breed}
+                </h1>
+            </div>
         </div >
     )
 }
