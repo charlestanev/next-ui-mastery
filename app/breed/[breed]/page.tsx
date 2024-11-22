@@ -1,6 +1,7 @@
 "use client";
 
 import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
+import AppLinkButton from '@/app/APP/COMPONENTS/CONSTATNS/AppLinkButton';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -34,12 +35,7 @@ function Page() {
                 'pt-12 w-[180px] CENTER h-screen !justify-start',
                 'gap-[120px] flex-col',
             )}>
-
-                <Link href='/'>
-                    <div className='bg-AppPop text-white CENTER w-[90px] h-[35px] rounded-md gap-2'>
-                        <FaAngleLeft /> back
-                    </div>
-                </Link>
+                <AppLinkButton link='/' />
 
                 <div>
                     {
@@ -47,6 +43,7 @@ function Page() {
                     }
                 </div>
             </div>
+            
         </div >
     )
 }
