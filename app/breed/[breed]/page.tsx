@@ -18,8 +18,6 @@ function Page() {
             .then((data) => {
                 setImageArray(data.message)
             })
-
-
     }
 
     useEffect(() => {
