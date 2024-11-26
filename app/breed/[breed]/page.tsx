@@ -2,12 +2,11 @@
 
 import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
 import AppLinkButton from '@/app/APP/COMPONENTS/CONSTATNS/AppLinkButton';
+import { AppDataTable } from '@/app/APP/COMPONENTS/DATATABLE/AppDataTable';
+import { columns } from '@/app/APP/COMPONENTS/DATATABLE/columns';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
-import { FaAngleLeft } from 'react-icons/fa'
-
+import React, { useEffect, useState } from 'react';
 function Page() {
     const Params = useParams();
     const [ImageArray, setImageArray] = useState<string[] | null>(null)
@@ -45,6 +44,12 @@ function Page() {
                 <h1 className='capitalize text-3xl font-bold text-AppMutedPop'>
                     {Params.breed}
                 </h1>
+                <div className='bg-white w-[500px] h-[400px] rounded-md'>
+                    {ImageArray
+                        ? <AppDataTable columns={columns} data={ImageArray} />
+                        : 'loading Table...'
+                    }
+                </div>
             </div>
         </div >
     )
