@@ -9,20 +9,31 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 function Page() {
     const Params = useParams();
-    const [ImageArray, setImageArray] = useState<string[] | null>(null)
+    const [ImageArray, setImageArray] = useState<string[] | null>(null);
+    const [FormatedData, setFormatedData] = useState<{ id: number; link: string; }[] | undefined>(undefined);
 
-    const GetData = async () => {
-        await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/20`)
-            .then((res) => res.json())
-            .then((data) => {
-                setImageArray(data.message)
-            })
-    }
+    // const ConvertData = () => {
+    //     const data = ImageArray?.map((link, index) => ({ id: index + 1, link }));
+    //     setFormatedData(data);
+    // }
 
     useEffect(() => {
-        GetData()
-        // alert('Inside a breed folder now')
-    }, [])
+        const GetData = async () => {
+            await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/20`)
+                .then((data) => data.json())
+                .then((data) => {
+                    setImageArray(data.message);
+                }).catch((err) => {
+                    console.log(err);
+                }).finally(() => {
+                    // ImageArray && ConvertData();
+                    // console.log(FormatedData);
+
+                });
+        };
+
+        GetData();
+    }, []);
 
     return (
 
@@ -40,13 +51,13 @@ function Page() {
                     }
                 </div>
             </div>
-            <div className="bg-AppSecondary w-full h-full pt-12 pl-12">
-                <h1 className='capitalize text-3xl font-bold text-AppMutedPop'>
+            <div className="bg-AppSecondary w-full h-full pt-12 p-12">
+                <h1 className='capitalize text-3xl font-bold text-AppMutedPop pb-10'>
                     {Params.breed}
                 </h1>
-                <div className='bg-white w-[500px] h-[400px] rounded-md'>
+                <div className='bg-white w-full h-[400px] rounded-md text-pink-500'>
                     {ImageArray
-                        ? <AppDataTable columns={columns} data={ImageArray} />
+                        ? <AppDataTable columns={columns} data={['kur']} />
                         : 'loading Table...'
                     }
                 </div>
