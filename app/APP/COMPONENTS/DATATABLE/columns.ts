@@ -2,12 +2,19 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-
-
 export const columns: ColumnDef<DogImages>[] = [
     {
         accessorKey: "id",
         header: "ID",
+    },
+    {
+        id: 'Avatar',
+        cell: ({ row }) => {
+            const { ImageLink } = row.original;
+            return (
+                
+            )
+        }
     },
     {
         accessorKey: "ImageLink",
@@ -23,18 +30,3 @@ export const Convert = (data: string[]): DogImages[] => {
         }
     })
 }
-
-// const data = [
-//     {
-//         id: 0,
-//         ImageLink: "kurwa",
-//     },
-//     {
-//         id: 1,
-//         ImageLink: "kurwa1",
-//     },
-//     {
-//         id: 2,
-//         ImageLink: "kurwa2",
-//     },
-// ]

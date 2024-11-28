@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image"
 
-export function AppSlider({ ImageArrayList }: { ImageArrayList: string[] }) {
+export function AppSlider({ ImageArrayList }: { ImageArrayList: DogImages[] }) {
     return (
         <Carousel
             opts={{
@@ -19,14 +19,14 @@ export function AppSlider({ ImageArrayList }: { ImageArrayList: string[] }) {
             className="h-[380px] w-[120px]"
         >
             <CarouselContent className="-mt-1 h-[400px]">
-                {ImageArrayList.map((item, index) => (
+                {ImageArrayList.map((item) => (
                     <CarouselItem
-                        key={index}
+                        key={item.id}
                         className="pt-1 md:basis-1/3"
                     >
                         <div className="h-[120px] w-[120px]">
                             <Image
-                                src={item}
+                                src={item.ImageLink}
                                 width={200}
                                 height={200}
                                 alt="Images"

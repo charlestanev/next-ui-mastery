@@ -7,9 +7,9 @@ import { columns, Convert } from '@/app/APP/COMPONENTS/DATATABLE/columns';
 import { cn } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+
 function Page() {
     const Params = useParams();
-    const [ImageArray, setImageArray] = useState<string[] | null>(null);
     const [FormattedData, setFormattedData] = useState<DogImages[] | null>(null);
 
 
@@ -19,7 +19,7 @@ function Page() {
                 .then((data) => data.json())
                 .then((data) => {
                     const convertedData = Convert(data.message);
-                    setFormatedData(convertedData);
+                    setFormattedData(convertedData);
                 }).catch((err) => {
                     console.log(err);
                 }).finally(() => {
@@ -42,7 +42,7 @@ function Page() {
 
                 <div>
                     {
-                        ImageArray ? <AppSlider ImageArrayList={ImageArray} /> : 'Loading...'
+                        FormattedData ? <AppSlider ImageArrayList={FormattedData} /> : 'Loading...'
                     }
                 </div>
             </div>
