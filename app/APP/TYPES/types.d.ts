@@ -3,3 +3,8 @@ type TitleIcon = {
     icon: React.ReactNode,
     link: string
 }
+
+type DogImages = {
+    id: number;
+    ImageLink: string;
+};

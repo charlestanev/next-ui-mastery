@@ -10,24 +10,22 @@ import React, { useEffect, useState } from 'react';
 function Page() {
     const Params = useParams();
     const [ImageArray, setImageArray] = useState<string[] | null>(null);
-    const [FormatedData, setFormatedData] = useState<{ id: number; link: string; }[] | undefined>(undefined);
+    const [FormattedData, setFormattedData] = useState<DogImages[] | null>(null);
 
-    // const ConvertData = () => {
-    //     const data = ImageArray?.map((link, index) => ({ id: index + 1, link }));
-    //     setFormatedData(data);
-    // }
 
     useEffect(() => {
         const GetData = async () => {
             await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/20`)
                 .then((data) => data.json())
                 .then((data) => {
-                    setImageArray(data.message);
+                    const convertedData = Convert(data.message);
+                    setFormatedData(convertedData);
                 }).catch((err) => {
                     console.log(err);
                 }).finally(() => {
                     // ImageArray && ConvertData();
                     // console.log(FormatedData);
+
                 });
         };
 
@@ -53,8 +51,8 @@ function Page() {
                     {Params.breed}
                 </h1>
                 <div className='bg-white w-full h-[400px] rounded-md text-pink-500'>
-                    {ImageArray
-                        ? <AppDataTable columns={columns} data={Convert(ImageArray)} />
+                    {FormattedData
+                        ? <AppDataTable columns={columns} data={FormattedData ? FormattedData : []} />
                         : 'loading Table...'
                     }
                 </div>

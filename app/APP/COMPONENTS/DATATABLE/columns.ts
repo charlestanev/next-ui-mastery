@@ -2,10 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 
-export type DogImages = {
-    id: number;
-    ImageLink: string;
-};
+
 
 export const columns: ColumnDef<DogImages>[] = [
     {
@@ -18,19 +15,26 @@ export const columns: ColumnDef<DogImages>[] = [
     },
 ]
 
-export const Convert = (ImageArray: string[]): DogImages[] => {
-    return [
-        {
-            id: 0,
-            ImageLink: "kurwa",
-        },
-        {
-            id: 1,
-            ImageLink: "kurwa1",
-        },
-        {
-            id: 2,
-            ImageLink: "kurwa2",
-        },
-    ]
+export const Convert = (data: string[]): DogImages[] => {
+    return data.map((item, index) => {
+        return {
+            id: index + 1,
+            ImageLink: item,
+        }
+    })
 }
+
+// const data = [
+//     {
+//         id: 0,
+//         ImageLink: "kurwa",
+//     },
+//     {
+//         id: 1,
+//         ImageLink: "kurwa1",
+//     },
+//     {
+//         id: 2,
+//         ImageLink: "kurwa2",
+//     },
+// ]
