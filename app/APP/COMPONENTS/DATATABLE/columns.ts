@@ -7,13 +7,30 @@ export type DogImages = {
     ImageLink: string;
 };
 
-const ColumnFunctionDef = (): ColumnDef<DogImages>[] => {
-    const columns: ColumnDef<DogImages>[] = [
-        {
-            accessorKey: "",
-            header: "ImageLink",
-        }
-    ]
+export const columns: ColumnDef<DogImages>[] = [
+    {
+        accessorKey: "id",
+        header: "ID",
+    },
+    {
+        accessorKey: "ImageLink",
+        header: "Image Link",
+    },
+]
 
-    return columns
+export const Convert = (ImageArray: string[]): DogImages[] => {
+    return [
+        {
+            id: 0,
+            ImageLink: "kurwa",
+        },
+        {
+            id: 1,
+            ImageLink: "kurwa1",
+        },
+        {
+            id: 2,
+            ImageLink: "kurwa2",
+        },
+    ]
 }

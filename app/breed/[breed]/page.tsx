@@ -3,7 +3,7 @@
 import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
 import AppLinkButton from '@/app/APP/COMPONENTS/CONSTATNS/AppLinkButton';
 import { AppDataTable } from '@/app/APP/COMPONENTS/DATATABLE/AppDataTable';
-import { columns } from '@/app/APP/COMPONENTS/DATATABLE/columns';
+import { columns, Convert } from '@/app/APP/COMPONENTS/DATATABLE/columns';
 import { cn } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -28,7 +28,6 @@ function Page() {
                 }).finally(() => {
                     // ImageArray && ConvertData();
                     // console.log(FormatedData);
-
                 });
         };
 
@@ -36,8 +35,6 @@ function Page() {
     }, []);
 
     return (
-
-
         <div className='h-screen w-screen bg-AppTertiary justify-start CENTER'>
             <div className={cn(
                 'pt-12 w-[180px] CENTER h-screen !justify-start',
@@ -57,7 +54,7 @@ function Page() {
                 </h1>
                 <div className='bg-white w-full h-[400px] rounded-md text-pink-500'>
                     {ImageArray
-                        ? <AppDataTable columns={columns} data={['kur']} />
+                        ? <AppDataTable columns={columns} data={Convert(ImageArray)} />
                         : 'loading Table...'
                     }
                 </div>
