@@ -3,7 +3,7 @@
 import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
 import AppLinkButton from '@/app/APP/COMPONENTS/CONSTATNS/AppLinkButton';
 import { AppDataTable } from '@/app/APP/COMPONENTS/DATATABLE/AppDataTable';
-import { columns, Convert } from '@/app/APP/COMPONENTS/DATATABLE/columns';
+import { columns } from '@/app/APP/COMPONENTS/DATATABLE/columns';
 import { cn } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -12,6 +12,14 @@ function Page() {
     const Params = useParams();
     const [FormattedData, setFormattedData] = useState<DogImages[] | null>(null);
 
+    const Convert = (data: string[]): DogImages[] => {
+        return data.map((item, index) => {
+            return {
+                id: index + 1,
+                ImageLink: item,
+            }
+        })
+    }
 
     useEffect(() => {
         const GetData = async () => {

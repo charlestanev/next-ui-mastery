@@ -13,22 +13,18 @@ import {
 import { Button } from "@/components/ui/button"
 import { MoreHorizontal } from "lucide-react"
 
-
-const Avatar = (row: DogImages) => {
-    return (
-        
-    )
-}
-
 export const columns: ColumnDef<DogImages>[] = [
     {
         accessorKey: "id",
         header: "ID",
     },
     {
+        accessorKey: "ImageLink",
+        header: "ImageLink",
+    },
+    {
         id: "actions",
         cell: ({ row }) => {
-            const payment = row.original
 
             return (
                 <DropdownMenu>
@@ -41,7 +37,9 @@ export const columns: ColumnDef<DogImages>[] = [
                     < DropdownMenuContent align="end" >
                         <DropdownMenuLabel>Actions </DropdownMenuLabel>
                         < DropdownMenuItem
-                            onClick={() => navigator.clipboard.writeText(payment.id)}
+                            onClick={() => {
+
+                            }}
                         >
                             Copy payment ID
                         </DropdownMenuItem>
@@ -53,13 +51,5 @@ export const columns: ColumnDef<DogImages>[] = [
             )
         },
     },
-]
 
-export const Convert = (data: string[]): DogImages[] => {
-    return data.map((item, index) => {
-        return {
-            id: index + 1,
-            ImageLink: item,
-        }
-    })
-}
+]
