@@ -26,10 +26,8 @@ export const columns: ColumnDef<DogImages>[] = [
         cell: ({ row }) => {
             const Image = row.original
 
-            return <Avatar>
-                <AvatarImage src={Image.ImageLink} />
-                <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
+            return <>
+            </>
         }
     },
     {
