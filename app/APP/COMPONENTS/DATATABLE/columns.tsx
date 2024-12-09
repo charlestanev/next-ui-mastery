@@ -1,6 +1,8 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 
 import {
     DropdownMenu,
@@ -19,10 +21,23 @@ export const columns: ColumnDef<DogImages>[] = [
         header: "ID",
     },
     {
+        header: "Avatar",
+        id: "Avatar",
+        cell: ({ row }) => {
+            const Image = row.original
+
+            return <Avatar>
+                <AvatarImage src={Image.ImageLink} />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+        }
+    },
+    {
         accessorKey: "ImageLink",
         header: "ImageLink",
     },
     {
+        header: "Actions",
         id: "actions",
         cell: ({ row }) => {
 
