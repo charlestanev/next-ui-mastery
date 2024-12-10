@@ -9,13 +9,13 @@ import Image from 'next/image';
 import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { inherits } from 'util';
+import AppButton from '../APP/COMPONENTS/AppButton';
+import { useRouter } from 'next/navigation';
 
 function Page() {
-    const Params = useParams();
     const Qparams = useSearchParams();
+    const Router = useRouter();
     const ImageUrl = Qparams.get('ImageUrl');
-
-    const [FormattedData, setFormattedData] = useState<DogImages[] | null>(null);
 
     return (
         <div className='h-screen w-screen bg-AppTertiary justify-start CENTER'>
@@ -23,7 +23,11 @@ function Page() {
                 'pt-12 w-[180px] CENTER h-screen !justify-start',
                 'gap-[120px] flex-col',
             )}>
-                <AppLinkButton link='/' />
+                <div
+                    onClick={() => { Router.back() }}
+                    className='flex justify-center'>
+                    <AppButton>Back</AppButton>
+                </div>
 
             </div>
             <div className="flex justify-center flex-col bg-AppSecondary w-full h-full pt-12 p-12 ">
@@ -32,7 +36,6 @@ function Page() {
                         Image Url
                     </h1>
                 </div>
-                {/* <Image src=ImageUrl alt={''}></Image> */}
                 {
                     ImageUrl && (
                         <div className='flex justify-center'>
