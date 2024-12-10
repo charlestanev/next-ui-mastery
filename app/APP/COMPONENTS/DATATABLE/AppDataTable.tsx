@@ -18,7 +18,10 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { useState } from "react"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -29,15 +32,35 @@ export function AppDataTable<TData, TValue>({
     columns,
     data,
 }: DataTableProps<TData, TValue>) {
+    const [ColumnFilters, setColumnFilters] = useState<ColumnFiltersState>([
+
+    ])
+
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
+        state: {
+            columnFilters: ColumnFilters,
+        },
+
+
     })
 
     return (
         <div>
+            <div className="flex items-center py-4">
+                <Input
+                    placeholder="Filter emails..."
+                    value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+                    onChange={(event) =>
+                        table.getColumn("email")?.setFilterValue(event.target.value)
+                    }
+                    className="max-w-sm"
+                />
+            </div>
+
             <div className="rounded-md border">
                 <Table>
                     <TableHeader>
