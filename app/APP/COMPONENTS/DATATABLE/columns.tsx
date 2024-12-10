@@ -24,9 +24,15 @@ export const columns: ColumnDef<DogImages>[] = [
         id: "Avatar",
         cell: ({ row }) => {
             const Image = row.original
-
-            return <>
-            </>
+            return (
+                <Avatar>
+                    <AvatarImage src={Image.ImageLink} />
+                    <AvatarFallback>
+                        {Image.Name}
+                        CN
+                    </AvatarFallback>
+                </Avatar>
+            )
         }
     },
     {
