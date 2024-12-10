@@ -13,6 +13,15 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { MoreHorizontal } from "lucide-react"
+import { useRouter } from "next/navigation"
+
+const ViewLargeImage = ({ ImageLink }: { ImageLink: string }) => {
+    const Router = useRouter()
+
+    return (
+        <p onClick={() => { Router.push(`/details/?ImageUrl=${ImageLink}`) }}>Show Image</p>
+    )
+}
 
 export const columns: ColumnDef<DogImages>[] = [
     {
@@ -43,6 +52,7 @@ export const columns: ColumnDef<DogImages>[] = [
         header: "Actions",
         id: "actions",
         cell: ({ row }) => {
+            const Image = row.original
 
             return (
                 <DropdownMenu>
@@ -59,7 +69,7 @@ export const columns: ColumnDef<DogImages>[] = [
 
                             }}
                         >
-                            Copy payment ID
+                            <ViewLargeImage ImageLink={Image.ImageLink} />
                         </DropdownMenuItem>
                         < DropdownMenuSeparator />
                         <DropdownMenuItem>View customer </DropdownMenuItem>
