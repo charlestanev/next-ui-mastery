@@ -52,8 +52,8 @@ export function AppDataTable<TData, TValue>({
 
 
     return (
-        <div>
-            <div className="flex items-center py-4">
+        <div className="px-5">
+            <div className="flex items-center py-5">
                 <Input
                     placeholder="Search Image..."
                     value={(table.getColumn("ImageLink")?.getFilterValue() as string) ?? ""}

@@ -28,7 +28,7 @@ export const columns: ColumnDef<DogImages>[] = [
                 <Avatar>
                     <AvatarImage src={Image.ImageLink} />
                     <AvatarFallback>
-                        {Image.Name}
+                        {Image.ImageLink}
                         CN
                     </AvatarFallback>
                 </Avatar>

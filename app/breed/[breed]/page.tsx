@@ -58,7 +58,7 @@ function Page() {
                 <h1 className='capitalize text-3xl font-bold text-AppMutedPop pb-10'>
                     {Params.breed}
                 </h1>
-                <div className='bg-white w-full h-auto rounded-md text-pink-500 mt-16'>
+                <div className='bg-white w-full h-auto rounded-md text-pink-500'>
                     {FormattedData
                         ? <AppDataTable columns={columns} data={FormattedData ? FormattedData : []} />
                         : 'loading Table...'
