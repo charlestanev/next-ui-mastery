@@ -8,6 +8,7 @@ import {
     useReactTable,
     ColumnFiltersState,
     getFilteredRowModel,
+    getSortedRowModel,
 } from "@tanstack/react-table"
 
 import {
@@ -32,7 +33,7 @@ export function AppDataTable<TData, TValue>({
     columns,
     data,
 }: DataTableProps<TData, TValue>) {
-    const [ColumnFilters, setColumnFilters] = useState<ColumnFiltersState>([
+    const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([
 
     ])
 
@@ -41,21 +42,23 @@ export function AppDataTable<TData, TValue>({
         columns,
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        onColumnFiltersChange: setColumnFilters,
+        getFilteredRowModel: getFilteredRowModel(),
         state: {
-            columnFilters: ColumnFilters,
+            columnFilters,
         },
+    });
 
-
-    })
 
     return (
         <div>
             <div className="flex items-center py-4">
                 <Input
-                    placeholder="Filter emails..."
-                    value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+                    placeholder="Search Image..."
+                    value={(table.getColumn("ImageLink")?.getFilterValue() as string) ?? ""}
                     onChange={(event) =>
-                        table.getColumn("email")?.setFilterValue(event.target.value)
+                        table.getColumn("ImageLink")?.setFilterValue(event.target.value)
                     }
                     className="max-w-sm"
                 />
