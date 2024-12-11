@@ -31,12 +31,9 @@ function Page() {
                 }).catch((err) => {
                     console.log(err);
                 }).finally(() => {
-                    // ImageArray && ConvertData();
-                    // console.log(FormatedData);
-
+                    console.log('Data Fetch Complete');
                 });
         };
-
         GetData();
     }, []);
 
