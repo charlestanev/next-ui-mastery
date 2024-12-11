@@ -65,13 +65,13 @@ export function AppDataTable<TData, TValue>({
             </div>
 
             <div className="rounded-md border">
-                <Table>
+                <Table className="rounded">
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (
                             <TableRow key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => {
                                     return (
-                                        <TableHead key={header.id} className="border border-red-500">
+                                        <TableHead key={header.id} className="border border-AppSecondary">
                                             {header.isPlaceholder
                                                 ? null
                                                 : flexRender(
@@ -92,7 +92,7 @@ export function AppDataTable<TData, TValue>({
                                     data-state={row.getIsSelected() && "selected"}
                                 >
                                     {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id} className="border border-red-500">
+                                        <TableCell key={cell.id} className="border border-AppSecondary">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
 
                                         </TableCell>

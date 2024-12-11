@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 import {
     Carousel,
     CarouselContent,
@@ -7,7 +7,6 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import Image from "next/image"
 
 export function AppSlider({ ImageArrayList }: { ImageArrayList: DogImages[] }) {
     return (
@@ -40,7 +39,5 @@ export function AppSlider({ ImageArrayList }: { ImageArrayList: DogImages[] }) {
             <CarouselPrevious />
             <CarouselNext />
         </Carousel>
-
-
     )
 }

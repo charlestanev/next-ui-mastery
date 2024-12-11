@@ -1,14 +1,8 @@
 "use client";
-
-import { AppSlider } from '@/app/APP/COMPONENTS/AppSlider';
-import AppLinkButton from '@/app/APP/COMPONENTS/CONSTATNS/AppLinkButton';
-import { AppDataTable } from '@/app/APP/COMPONENTS/DATATABLE/AppDataTable';
-import { columns } from '@/app/APP/COMPONENTS/DATATABLE/columns';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { useParams, useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { inherits } from 'util';
+import { useSearchParams } from 'next/navigation';
+import React from 'react';
 import AppButton from '../APP/COMPONENTS/AppButton';
 import { useRouter } from 'next/navigation';
 

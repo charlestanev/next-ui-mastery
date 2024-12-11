@@ -23,7 +23,7 @@ function Page() {
 
     useEffect(() => {
         const GetData = async () => {
-            await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/5`)
+            await fetch(`https://dog.ceo/api/breed/${Params.breed}/images/random/20`)
                 .then((data) => data.json())
                 .then((data) => {
                     const convertedData = Convert(data.message);
@@ -44,7 +44,6 @@ function Page() {
                 'gap-[120px] flex-col',
             )}>
                 <AppLinkButton link='/' />
-
                 <div>
                     {
                         FormattedData ? <AppSlider ImageArrayList={FormattedData} /> : 'Loading...'
@@ -55,7 +54,7 @@ function Page() {
                 <h1 className='capitalize text-3xl font-bold text-AppMutedPop pb-10'>
                     {Params.breed}
                 </h1>
-                <div className='bg-white w-full h-auto rounded-md text-pink-500'>
+                <div className='bg-white w-full h-auto rounded-md text-black-500'>
                     {FormattedData
                         ? <AppDataTable columns={columns} data={FormattedData ? FormattedData : []} />
                         : 'loading Table...'

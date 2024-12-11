@@ -19,7 +19,7 @@ function Page() {
 
   useEffect(() => {
     const GetData = async () => {
-      await fetch(`https://dog.ceo/api/breed/hound/afgan/images/random/5`)
+      await fetch(`https://dog.ceo/api/breed/hound/afghan/images/random/20`)
         .then((data) => data.json())
         .then((data) => {
           const convertedData = Convert(data.message);
@@ -37,14 +37,15 @@ function Page() {
     <div className={
       cn(
         'gap-1 flex-col bg-AppTertiary h-screen w-screen',
-        'justify-center items-center flex-row'
+        'justify-center items-center flex flex-row'
       )}>
       <AppLeftPanel />
-      <p>test</p>
-      {FormattedData
-        ? <AppDataTable columns={columns} data={FormattedData ? FormattedData : []} />
-        : 'loading Table...'
-      }
+      <div className='bg-white w-full h-auto rounded-md text-black-500'>
+        {FormattedData
+          ? <AppDataTable columns={columns} data={FormattedData ? FormattedData : []} />
+          : 'loading Table...'
+        }
+      </div>
     </div>
   )
 }
