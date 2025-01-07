@@ -35,7 +35,7 @@ function Page() {
                 });
         };
         GetData();
-    }, []);
+    }, [Params.breed]);
 
     return (
         <div className='h-screen w-screen bg-AppTertiary justify-start CENTER'>
